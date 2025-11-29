@@ -42,12 +42,9 @@ SashaPromise.reject('Провал')
   .catch(() => 'Исправлено!')
   .then(msg => console.log('Пример 6:', compare(msg, 'Исправлено!')));
 
-let completed = false;
-
 SashaPromise.resolve(100)
   .then(x => x / 2)
   .finally(() => {
-    completed = true;
     console.log('Пример 7 — finally выполнен');
   })
   .then(x => console.log('Пример 7:', compare(x, 50)));
